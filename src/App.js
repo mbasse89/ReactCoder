@@ -1,25 +1,43 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
 
-export default App;
+    const [contador, setContador] = useState(0)
+    const [cargando, setCargando] = useState(false)
+  const [inputValor, setInputValor] = useState(0)
+    
+    const sumar = () => {
+      setContador(contador + 1)
+    }
+  
+    const restar = () => {
+      setContador(contador - 1)
+    }
+  
+    const limpiar = () =>{
+        setContador (0)
+    }
+
+      // Ejercicio:
+    // 1) Sumar un boton de restart // FACIL
+  
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>Contador: {contador}</p>
+          <div className='contador-container'>
+            <button className='btn' onClick={restar} >-</button>
+            <button className='btn' onClick={sumar} >+</button>
+            <button className='btn' onClick={limpiar}> Limpiar    </button>
+            <input onChange={input}>
+          </div>
+  
+  
+        </header>
+      </div>
+    );
+  }
+  
+  export default App;

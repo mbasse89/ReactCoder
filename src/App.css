@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.btn{
+  width: 100px;
+  height: 50px;
+  background-color: gold;
+}
+
+.contador-container{
+  display: flex;
+  flex-direction: row;
+  width: 300px;
+  justify-content: space-around;
+}
