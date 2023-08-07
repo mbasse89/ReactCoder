@@ -7,7 +7,7 @@ import { faBeerMugEmpty } from '@fortawesome/free-solid-svg-icons';
 const CartWidget = () => {
     return (
 
-        <div className="px-5 cart-widget">
+        <div className="px-5 cartWidget">
             <FontAwesomeIcon icon={faBeerMugEmpty} size="2x" />
             <p className="contadorCarrito">0</p>
         </div>
