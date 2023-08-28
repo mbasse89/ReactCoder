@@ -1,0 +1,123 @@
+[
+    {
+      "nombre": "Cerveza Lager",
+      "precio": 5.99,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Rubia"
+    },
+    {
+      "nombre": "Cerveza IPA",
+      "precio": 6.49,
+      "imagen": "./img/placeholder.png",
+      "categoria": "IPAs"
+    },
+    {
+      "nombre": "Cerveza Stout",
+      "precio": 4.99,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Negra"
+    },
+    {
+      "nombre": "Cerveza Trigo",
+      "precio": 5.79,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Rubia"
+    },
+    {
+      "nombre": "Cerveza Pale Ale",
+      "precio": 5.69,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Rubia"
+    },
+    {
+      "nombre": "Cerveza Roja",
+      "precio": 5.89,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Roja"
+    },
+    {
+      "nombre": "Cerveza Pilsner",
+      "precio": 5.49,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Rubia"
+    },
+    {
+      "nombre": "Cerveza Bock",
+      "precio": 6.99,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Negra"
+    },
+    {
+      "nombre": "Cerveza Belgian Ale",
+      "precio": 7.29,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Amber Ale",
+      "precio": 5.79,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Weissbier",
+      "precio": 5.89,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Porter",
+      "precio": 6.19,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Negra"
+    },
+    {
+      "nombre": "Cerveza Blonde Ale",
+      "precio": 5.59,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Amber Lager",
+      "precio": 5.69,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Strong Ale",
+      "precio": 7.49,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Scottish Ale",
+      "precio": 6.79,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Kölsch",
+      "precio": 5.39,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Rauchbier",
+      "precio": 6.29,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Cream Ale",
+      "precio": 5.59,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Otras"
+    },
+    {
+      "nombre": "Cerveza Imperial Stout",
+      "precio": 7.99,
+      "imagen": "./img/placeholder.png",
+      "categoria": "Negra"
+    }
+  ]
+  
