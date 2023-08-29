@@ -1,16 +1,15 @@
 import './App.css';
 import React from 'react';
-import NavBar from './components/NavBar/NavBar';
 import Footer from './components/Footer/Footer';
 import ItemListContainer from './containers/ItemListContainer';
+import Router from './Router/Router';
 
 const App = () => {
     return (
             <div>
-                <NavBar />
-                <div>
-                    <ItemListContainer greeting="Bienvenido a mi e-commerce" />
-                </div>
+                <Router/> 
+                {/* llamo a mi navbar */}
+        
                 <Footer />
             </div>
     );

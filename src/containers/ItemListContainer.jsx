@@ -13,35 +13,36 @@ const ItemListContainer = ({ greeting }) => {
 
       // Filtrar productos por categoría si se proporciona una categoría
       const filteredProducts = id
-        ? productosData.filter((product) => product.categoria === id)
+        ? productosData.filter((product) => product.categoria.toLowerCase() === id.toLowerCase())
         : productosData;
 
       setProductos(filteredProducts)
     } catch (error) {
       console.error('Error al cargar los productos:', error)
     }
-  };
+  }
 
   useEffect(() => {
+    console.log("Filtrando por categoría:", id)
     getProductos() // Llama a getProductos cuando el componente se monta
   }, [id])
 
   return (
-    <div className="row my-5">
-      <h1 className="greetingMensaje"> {greeting} </h1>
-
-      <div className="products-list contenedor mx-5">
+    <div className="  my-5 productoContenedor">
+      <div className="product-list-container">
         {productos.map((product) => (
-          <div key={product.id} className="gap-3">
+          
+          <div key={product.id} className="  py-5 px-3 card">
             <img
-              className="imgProductos"
+              className="productoImagen"
               src={ img}  
               alt={product.nombre}
             />
             <h3>{product.nombre}</h3>
             <p>Precio: ${product.precio}</p>
-            {/* <button className='btn '>Ver más</button> */}
-            {/* <Link to={`/item/${product.id}`}>Ver más</Link> */}
+            <p>Categoria: {product.categoria}</p>
+            
+            <Link className='btn btn-outline-dark ' to={`/item/${product.id}`}>Ver más</Link>
           </div>
         ))}
       </div>

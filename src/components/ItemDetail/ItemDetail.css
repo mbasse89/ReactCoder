@@ -1,0 +1,11 @@
+ .imgProductos{
+  display:block;
+  height: 30rem;
+  width: 30rem;
+ }
+
+ .contenedorImagen{
+  display: flex;
+  justify-content: center;
+ }
+

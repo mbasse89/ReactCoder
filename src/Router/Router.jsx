@@ -10,12 +10,13 @@ import ItemDetailContainer from "../components/ItemDetailContainer/ItemDetailCon
 export default function Router (){
     return(
         <BrowserRouter>
+            <NavBar/>
+             <Routes>
+                <Route path='/' element={<ItemListContainer/>}  />
+                <Route path='/category/:id' element={<ItemListContainer greeting="Products"/>} />
+                <Route path="/item/:itemId" element={<ItemDetailContainer />} />
+            </Routes>
 
-        <Routes>
-            <Route path='/' element={<ItemListContainer/>}  />
-            <Route path='/category/:id' element={<ItemListContainer/>}  />
-            <Route path="/item/:itemId" element={<ItemDetailContainer />} />
-        </Routes>
         </BrowserRouter>
     )
 }

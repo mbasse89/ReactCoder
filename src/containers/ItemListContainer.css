@@ -12,14 +12,27 @@
     min-height: 100vh; 
   }
 
-  .imgProductos{
-    max-width: 80%;
-    max-height: 80%;
+  .productoContenedor {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+      max-width: 1424px;
+    margin: 0 auto;
   }
   
-  .contenedor{
+  .productoImagen {
+    width: 100%;
+    max-width: 585px;
+  }
+  
+ 
+  .product-list-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: 30px 60px;
+    margin: 40px 20px;
   }
   
   
+ 
