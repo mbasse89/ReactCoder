@@ -4,8 +4,7 @@
   width: 30rem;
  }
 
- .contenedorImagen{
-  display: flex;
-  justify-content: center;
+ .contenedor{
+min-height: 50rem;
  }
 

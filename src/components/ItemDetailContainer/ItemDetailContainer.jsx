@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
+import { Spinner } from '../Spinner/Spinner'
+
 
 export default function ItemDetailContainer() {
   const [detail, setDetail] = useState({})
   const { itemId } = useParams()//  
+
+  const [loading, setLoading] = useState(true); // Estado de carga
+  
+
 
   useEffect(() => { 
     const fetchItemDetails = async () => {
@@ -29,9 +35,19 @@ export default function ItemDetailContainer() {
     fetchItemDetails()
   }, [itemId])
 
+  useEffect(() => {
+    setTimeout(() => {
+        setLoading(false);
+    }, 500);
+}, [])
+
   return (
     <div className="">
+      {loading ? ( // Si está cargando, muestra el spinner
+          <Spinner />
+        ) : (
       <ItemDetail detail={detail} />
+        )}
     </div>
   );
 }

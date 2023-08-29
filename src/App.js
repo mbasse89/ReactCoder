@@ -10,7 +10,7 @@ const App = () => {
                 <Router/> 
                 {/* llamo a mi navbar */}
         
-                <Footer />
+                {/* <Footer /> */}
             </div>
     );
 };

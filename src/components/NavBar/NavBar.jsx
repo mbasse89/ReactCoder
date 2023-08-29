@@ -6,14 +6,13 @@ import { Link } from 'react-router-dom'
 import { Spinner } from '../Spinner/Spinner'
 
 const NavBar = () => {
-    const [loading, setLoading] = useState(true); // Estado de carga
-    const [itemCount, setItemCount] = useState(0); // Estado de cantidad de elementos en el carrito
+    const [loading, setLoading] = useState(true)// Estado de carga
+    const [itemCount, setItemCount] = useState(0) // Estado de cantidad de elementos en el carrito
 
     useEffect(() => {
         setTimeout(() => {
-            setLoading(false);
-        }, 1500);
-
+            setLoading(false)
+        }, 1500)
         // Simular cambio en la cantidad de elementos en el carrito
         setItemCount(3); // Cambia este valor según tus necesidades reales
     }, [])
