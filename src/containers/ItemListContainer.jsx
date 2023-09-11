@@ -43,7 +43,7 @@ const ItemListContainer = ({ greeting }) => {
   
 
   return (
-    <div className="my-5 productoContenedor">
+    <div className="my-5 productoContenedor ">
       {/* <h1 className="greetingMensaje"> {greeting} </h1> */}
       <div className="product-list-container">
         {loading ? ( // Si está cargando, muestra el spinner

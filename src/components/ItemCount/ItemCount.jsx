@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import './ItemCount.css'
+import { useCartContext } from '../CartContext/CartContext'// Asegúrate de que la ruta sea correcta
+
 
 const ItemCount = () => {
 
+    const { cartItemCount, setCartItemCount } = useCartContext()
+
     // 
-    const [cantidad, setCantidad] = useState(1);
+    const [cantidad, setCantidad] = useState(1)
 
             const restarProducto = () => {
         cantidad > 1 && setCantidad(cantidad - 1)
@@ -14,6 +18,10 @@ const ItemCount = () => {
         setCantidad(cantidad + 1)
     }
 
+    const agregarAlCarrito = () => {
+        // Aquí debes actualizar el contexto del carrito con la cantidad actual
+        setCartItemCount(cartItemCount + cantidad)
+    }
 
 
     return (
@@ -24,7 +32,7 @@ const ItemCount = () => {
                 <button className="  btn btn-outline-warning" onClick={sumarProducto}>+</button>
             </div>
             <div className='d-flex justify-content-around'>
-                <button className="   btn btn-outline-warning  botonAgregar "   >Agregar </button>
+                <button className="   btn btn-outline-warning  botonAgregar " onClick={agregarAlCarrito}   >Agregar </button>
             </div>
         </div>
     )

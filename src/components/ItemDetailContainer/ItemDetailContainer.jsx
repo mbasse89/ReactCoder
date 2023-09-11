@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import { Spinner } from '../Spinner/Spinner'
+import "./ItemDetailContainer.css"
 
 
 export default function ItemDetailContainer() {
@@ -42,7 +43,7 @@ export default function ItemDetailContainer() {
 }, [])
 
   return (
-    <div className="">
+    <div className="body">
       {loading ? ( // Si está cargando, muestra el spinner
           <Spinner />
         ) : (
