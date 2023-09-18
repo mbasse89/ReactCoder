@@ -1,50 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
-import './ItemListContainer.css'
-import img from '../img/placeholder.png'
-import { Spinner } from '../components/Spinner/Spinner'
+  import React, { useState, useEffect } from 'react'
+  import { useParams, Link } from 'react-router-dom'
+  import './ItemListContainer.css'
+  import img from '../img/placeholder.png'
+  import { Spinner } from '../components/Spinner/Spinner'
+  import {getDocs, collection } from 'firebase/firestore'
+  import { db } from '../firebase/client'
 
-const ItemListContainer = ({ greeting }) => {
-  const [productos, setProductos] = useState([])
-  const [loading, setLoading] = useState(true); // Estado de carga
-  
-  useEffect(() => {
-    setTimeout(() => {
-        setLoading(false);
-    }, 500);
-}, [])
 
-  const { id } = useParams()
-  const getProductos = async () => {
-    try {
-      const response = await fetch('/data/productos.json')
-      const productosData = await response.json()
 
-      // Filtrar productos por categoría si se proporciona una categoría
-      const filteredProducts = id
-        ? productosData.filter((product) => product.categoria.toLowerCase() === id.toLowerCase())
-        : productosData
+  const ItemListContainer = ({ greeting }) => {
+    const [productos, setProducts] = useState([])
+    const [loading, setLoading] = useState(true); // Estado de carga
+    const { id: categoryName } = useParams(); // Captura la categoría desde la URL
 
-      setProductos(filteredProducts)
- 
-    } catch (error) {
-      console.error('Error al cargar los productos:', error)
-    }
+    
+    useEffect(() => {
+      setTimeout(() => {
+          setLoading(false);
+      }, 500);
+  }, [])
+
+  const getProducts = async () => {
+    const ref = collection(db, 'products'); // 
+    const data = await getDocs(ref);
+    const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    console.log(dataFiltrada);
+    
+    const filteredProducts = categoryName
+    ? dataFiltrada.filter((product) => product.categoryId === categoryName)
+    : dataFiltrada;
+
+  setProducts(filteredProducts)
   }
-  
-
-
 
   useEffect(() => {
-    console.log("Filtrando por categoría:", id)
-    getProductos() // Llama a getProductos cuando el componente se monta
-  }, [id])
+    getProducts();
+  }, [categoryName])
 
-  
+ 
+
 
   return (
     <div className="my-5 productoContenedor ">
-      {/* <h1 className="greetingMensaje"> {greeting} </h1> */}
       <div className="product-list-container">
         {loading ? ( // Si está cargando, muestra el spinner
           <Spinner />
@@ -57,9 +54,9 @@ const ItemListContainer = ({ greeting }) => {
                 src={img}  
                 alt={product.nombre}
               />
-              <h3>{product.nombre}</h3>
-              <p>Precio: ${product.precio}</p>
-              <p>Categoría: {product.categoria}</p>
+              <h3>{product.title}</h3>
+              <p>Precio: ${product.price}</p>
+              <p>Categoría: {product.categoryId}</p>
               <Link className='btn btn-outline-dark ' to={`/item/${product.id}`}>Ver más</Link>
             </div>
           ))

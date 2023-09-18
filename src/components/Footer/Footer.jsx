@@ -12,8 +12,7 @@ const Footer = () => {
           <div className="container">
             <div className="row justify-content-center">
               <div className="col-12 col-md-10 col-lg-8 col-xl-6">
-                <h5 className="mb-7 text-center text-white"></h5>
-                <form className="mb-11">
+                 <form className="mb-11">
                   <div className="row gx-5 align-items-start">
                     <div className="col py-3">
                       <input type="email" className="form-control form-control-gray-700 form-control-lg " placeholder="Ingrese su correo electrónico *" />
@@ -128,7 +127,6 @@ const Footer = () => {
             <div className="row">
               <div className="col">
                 <p className="mb-3 mb-md-0 fs-xxs text-muted">
-                  © 2023 Todos los derechos reservados. Diseñado por Pablo Bersier.
                 </p>
               </div>
               <div className="col-auto">

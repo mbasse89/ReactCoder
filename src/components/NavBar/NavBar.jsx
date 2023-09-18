@@ -5,6 +5,7 @@ import Logo from '../logo'
 import { Link } from 'react-router-dom'
 import { Spinner } from '../Spinner/Spinner'
 import { useCartContext } from '../CartContext/CartContext'
+import CartView from '../CartView/CartView'
 
 const NavBar = () => {
     const [loading, setLoading] = useState(true)// Estado de carga
@@ -14,8 +15,8 @@ const NavBar = () => {
         setTimeout(() => {
             setLoading(false)
         }, 1500)
-        // Simular cambio en la cantidad de elementos en el carrito
-        setCartItemCount(0); // Cambia este valor según tus necesidades reales
+        // Simula cambio en la cantidad de elementos en el carrito
+        setCartItemCount(0) 
     }, [setCartItemCount])
 
     return (
@@ -37,8 +38,9 @@ const NavBar = () => {
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-
-                {loading ? <Spinner /> : <CartWidget itemCount={cartItemCount} />}
+                
+                
+                {loading ? <Spinner /> : <Link to="/cartview" className="nav-link"><CartWidget itemCount={cartItemCount} /></Link>}
                 {/*ternario que carga spinner e inicializa carrito en 0  */}
 
             </div>

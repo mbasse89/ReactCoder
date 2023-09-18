@@ -26,13 +26,13 @@ const ItemDetail = ({ detail }) => {
           <img
             className="imgProductos py-3"
             src={img}
-            alt={detail.nombre}
+            alt={detail.title}
           />
           <div className='row'>
             <div className='col'>
-              <p>Nombre: {detail.nombre}</p>
-              <p>Precio: ${detail.precio}</p>
-              <p>Categoría: {detail.categoria}</p>
+              <p>Nombre: {detail.title}</p>
+              <p>Precio: ${detail.price}</p>
+              <p>Categoría: {detail.categoryId}</p>
             </div>
             <div className='col'>
               <ItemCount />
