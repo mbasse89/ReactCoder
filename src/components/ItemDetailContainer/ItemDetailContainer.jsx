@@ -6,8 +6,7 @@ import "./ItemDetailContainer.css"
 import { doc, getDoc } from "firebase/firestore"
 import { db } from "../../firebase/client"
 
-
-
+ 
 
 
 export default function ItemDetailContainer() {

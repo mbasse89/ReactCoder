@@ -5,8 +5,7 @@ import Logo from '../logo'
 import { Link } from 'react-router-dom'
 import { Spinner } from '../Spinner/Spinner'
 import { useCartContext } from '../CartContext/CartContext'
-import CartView from '../CartView/CartView'
-
+ 
 const NavBar = () => {
     const [loading, setLoading] = useState(true)// Estado de carga
     const { cartItemCount, setCartItemCount } = useCartContext(); // Usa el contexto para obtener el estado del carrito
@@ -16,8 +15,7 @@ const NavBar = () => {
             setLoading(false)
         }, 1500)
         // Simula cambio en la cantidad de elementos en el carrito
-        setCartItemCount(0) 
-    }, [setCartItemCount])
+     }, [setCartItemCount])
 
     return (
         <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top ">

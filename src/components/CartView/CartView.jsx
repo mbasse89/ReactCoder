@@ -1,30 +1,47 @@
-import React, { useContext } from 'react';
-import { CartContext } from '../CartContext/CartContext';
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 import CartItem from '../CartItem/CartItem';
+import { useCartContext } from '../CartContext/CartContext';
+import './CartView.css'
 
 const CartView = () => {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems } = useCartContext();
 
   return (
-    <div>
-      <div className='container pt-5'>
-        <h2 className="pt-5">Carrito de Compras</h2></div>
+    
+    <div className='text-center pt-5 my-5  d-flex  justify-content-center '>
+      {/* <h2 className='d-flex justify-content-center'>Carrito de Compras</h2> */}
       {cartItems.length === 0 ? (
-        <div>
-          <p>Tu carrito está vacío.</p>
+        <div className="mt-3 border border-3 border-black rounded-1  carritoVacioContainer ">
+          <p className='h2 pt-4'>Tu carrito está vacío.</p>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mood-empty" width="94" height="94" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+            <path d="M9 10l.01 0"></path>
+            <path d="M15 10l.01 0"></path>
+            <path d="M9 15l6 0"></path>
+          </svg>
         </div>
       ) : (
-        <div>
-          <p>Tenés {cartItems.length} {cartItems.length === 1 ? 'producto' : 'productos'} en tu carrito.</p>
-          <ul>
+        <div className='x'>
+          <p>Tenes {cartItems.length} {cartItems.length === 1 ? 'producto' : 'productos'} en tu carrito.</p>
+          <div className="d-flex   productos flex-row">
             {cartItems.map((item) => (
-              <CartItem key={item.id} item={item} />
+              <CartItem key=
+               {item.id}  product={item} />
             ))}
-          </ul>
-          <button>Comprar</button>
+          </div>
+          <Link to="/order"> {/* Enlace a la página de Order */}
+            <button className="btn btn-primary mt-3">Comprar</button>
+          </Link>
+
         </div>
       )}
     </div>
+
+
+
   );
 }
 

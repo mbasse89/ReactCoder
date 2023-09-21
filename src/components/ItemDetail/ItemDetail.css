@@ -8,3 +8,7 @@
 min-height: 50rem;
  }
 
+.containerDetail{
+    min-height: 89px;
+    max-height: 90px;
+}

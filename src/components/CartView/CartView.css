@@ -1,0 +1,26 @@
+.productos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+    gap: 30px 60px;
+    margin: 40px 20px;
+    min-width: 30rem;
+}
+
+.carritoVacioContainer{
+    width:18rem;
+    height: 15rem;
+   
+}
+
+.productos .cart-item {
+    width: 300px; /* Cambia el ancho según tu preferencia */
+    /* margin: 0 10px 20px;  */
+  }
+  
+   .cart-item .imgProductos {
+    max-width: 100%; /* Ajusta el tamaño máximo de la imagen */
+    height: auto; /* Para mantener la proporción de la imagen */
+  }
+  
+ 
