@@ -26,8 +26,7 @@ export default function Router (){
                     <Route path="/order" element={<Order/>} />
                     <Route path="/form" element={<Form/>}/>
                   </Routes>
-            {/* <Footer/>    */}
-        </BrowserRouter>
+         </BrowserRouter>
     )
 }
 

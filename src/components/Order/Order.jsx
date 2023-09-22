@@ -4,14 +4,16 @@ import { Link } from 'react-router-dom';
 import './Order.css';
 
 const Order = () => {
+  // Obtén los datos del carrito desde el contexto
   const { cartItems } = useCartContext();
 
+  // Función para calcular el total de la compra
   const calculateTotal = (items) => {
     return items.reduce((total, item) => total + item.price * item.quantity, 0);
   };
 
   return (
-    <div className="order-container  ">
+    <div className="order-container">
       <h2 className="order-title">Resumen de la Compra</h2>
       <div className="order-items">
         {cartItems.map((item) => (
@@ -27,6 +29,7 @@ const Order = () => {
       </div>
       <p className="order-total">Total a pagar: ${calculateTotal(cartItems)}</p>
       <div className="order-confirm-button">
+        {/* Enlace a la página de formulario */}
         <Link to="/form">
           <button className="btn btn-primary">Confirmar Compra</button>
         </Link>

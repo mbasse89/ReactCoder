@@ -6,13 +6,18 @@ import './Form.css';
 import { useCartContext } from '../CartContext/CartContext';
 
 const Form = () => {
+  // Importa el hook useForm para manejar el formulario
   const { handleSubmit, register, formState: { errors } } = useForm();
+  // Obtiene funciones y estados relacionados con el carrito del contexto
   const { setCartItems, setCartItemCount } = useCartContext();
 
+  // Estados para controlar el formulario y el ID de orden
   const [form, setForm] = useState(false);
   const [orderId, setOrderId] = useState(null);
 
+  // Función que maneja el envío del formulario
   const onSubmit = async (data) => {
+    // Crea un objeto "order" con los datos del comprador
     const order = {
       buyer: {
         name: data.name,
@@ -21,11 +26,12 @@ const Form = () => {
       },
     };
 
+    // Accede a la colección "orders" en Firebase y agrega la orden
     const ordersCollection = collection(db, 'orders');
     try {
       const docRef = await addDoc(ordersCollection, order);
- 
-      // Actualiza el estado para ocultar el formulario y mostrar el alert
+
+      // Actualiza el estado para ocultar el formulario y mostrar el alert con el ID de orden
       setOrderId(docRef.id);
       setForm(true);
 
@@ -37,6 +43,7 @@ const Form = () => {
     }
   };
 
+  
   return (
     <div className='pt-5'>
       {form ? (
