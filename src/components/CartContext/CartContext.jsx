@@ -26,21 +26,11 @@ export const CartProvider = ({ children }) => {
     setCartTotal(cartTotal + item.price * item.quantity);
   };
 
-  const removeFromCart = (productId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== productId);
-    setCartItems(updatedCart);
-
-    // Recalcula el total del carrito después de eliminar un producto
-    const newTotal = updatedCart.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0
-    );
-    setCartTotal(newTotal);
-  };
+  
 
   return (
     <CartContext.Provider
-      value={{ cartItemCount, setCartItemCount, cartItems, setCartItems, addToCart, removeFromCart, cartTotal, setCartTotal }}
+      value={{ cartItemCount, setCartItemCount, cartItems, setCartItems, addToCart,   cartTotal, setCartTotal }}
     >
       {children}
     </CartContext.Provider>

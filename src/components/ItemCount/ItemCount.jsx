@@ -35,6 +35,8 @@ const ItemCount = ({ product }) => {
         name: product.title,
         quantity: cantidad,
         price: product.price,
+        image: product.image,
+        
       };
       setCartItems([...cartItems, newItem]);
     }
