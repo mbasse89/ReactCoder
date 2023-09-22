@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Bierkurbis es un proyecto que simula un e-commerce  desarrollado para la venta de productos relacionados con la cerveza artesanal. Proporciona una plataforma en línea donde los usuarios pueden explorar, seleccionar y comprar una variedad de productos relacionados con la venta de cervezas.
+El proyecto fue ideado para el curso de React brindado por CoderHouse. En el mismo, hemos aprendido la utilización del trabajo con una API externa, la importancia de los estados, el contexto (context) y cómo crear componentes funcionales. En un principio trabajamos con una DB local mediante un archivo json, pero luego pudimos trabajar con Firebase, una plataforma donde pudimos subir la info de nuestros productos e imágenes. 
+  En el proyecto aprendimos a crear un Carrito de compras, donde agregamos productos y se pudo simular el proceso de compra. Navegamos a través de los diferentes
+  componentes utilizando las Routes, q nos permitieron simplificar los códigos de navegación
 
-## Available Scripts
 
-In the project directory, you can run:
+Tecnologías Utilizadas
+El proyecto Bierkurbis  se desarrolló utilizando las siguientes tecnologías principales:
 
-### `npm start`
+React.js: Utilizado para la construcción de la interfaz de usuario.
+Firebase: Utilizado para el almacenamiento de datos y la autenticación de usuarios.
+Bootstrap: Utilizado para el diseño y la maquetación responsiva.
+HTML/CSS: Utilizados para la estructura y el estilo de la aplicación web.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Instalación
+Si deseas ejecutar este proyecto localmente, puedes seguir estos pasos:
 
-### `npm test`
+Clona el repositorio:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+bash
+Copy code
+git clone https://github.com/tu-usuario/bierkurbis-ecommerce.git
+Navega al directorio del proyecto:
 
-### `npm run build`
+bash
+Copy code
+cd bierkurbis-ecommerce
+Instala las dependencias:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy code
+npm install
+Inicia la aplicación:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+bash
+Copy code
+npm start
