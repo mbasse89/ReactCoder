@@ -12,7 +12,7 @@ import { db } from "../../firebase/client"
 export default function ItemDetailContainer() {
   const [detail, setDetail] = useState({});
   const { itemId } = useParams();
-  const [loading, setLoading] = useState(true); // Estado de carga
+  const [loading, setLoading] = useState(true); //  
 
   useEffect(() => {
     const fetchItemDetails = async () => {
@@ -22,14 +22,14 @@ export default function ItemDetailContainer() {
 
         if (docSnapshot.exists()) {
           setDetail({ id: itemId, ...docSnapshot.data() });
-          setLoading(false); // Marca la carga como completa
+          setLoading(false); // 
         } else {
           console.error("Producto no encontrado");
-          setLoading(false); // Marca la carga como completa en caso de no encontrar el producto
+          setLoading(false); // 
         }
       } catch (error) {
         console.error("Error al cargar los detalles:", error);
-        setLoading(false); // Marca la carga como completa en caso de error
+        setLoading(false);  
       }
     };
 

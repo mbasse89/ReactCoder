@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom';
 import './Order.css';
 
 const Order = () => {
-  // Obtén los datos del carrito desde el contexto
-  const { cartItems } = useCartContext();
+   const { cartItems } = useCartContext();
 
   // Función para calcular el total de la compra
   const calculateTotal = (items) => {

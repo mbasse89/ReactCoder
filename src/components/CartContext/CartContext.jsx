@@ -8,7 +8,7 @@ export const CartProvider = ({ children }) => {
   // Estados para el carrito de compras
   const [cartItemCount, setCartItemCount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
-  const [cartTotal, setCartTotal] = useState(); // Agregar el estado del total del carrito
+  const [cartTotal, setCartTotal] = useState();  
 
   // Función para agregar un elemento al carrito
   const addToCart = (item) => {
@@ -24,15 +24,12 @@ export const CartProvider = ({ children }) => {
       });
       setCartItems(updatedCartItems);
     } else {
-      // Agrega un nuevo elemento al carrito si no existe
-      setCartItems([...cartItems, item]);
+       setCartItems([...cartItems, item]);
     }
     
-    // Actualiza la cantidad total de productos en el carrito
-    setCartItemCount(cartItemCount + item.quantity);
+     setCartItemCount(cartItemCount + item.quantity);
 
-    // Actualiza el total del carrito cuando se agrega un producto
-    setCartTotal(cartTotal + item.price * item.quantity);
+     setCartTotal(cartTotal + item.price * item.quantity);
   };
 
   // Devuelve el contexto con los estados y funciones del carrito

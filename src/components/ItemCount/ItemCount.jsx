@@ -6,21 +6,17 @@ const ItemCount = ({ product }) => {
   // Acceder al contexto del carrito
   const { cartItems, setCartItems, setCartItemCount } = useCartContext();
 
-  // Estado local para la cantidad de productos seleccionados
-  const [cantidad, setCantidad] = useState(1);
+   const [cantidad, setCantidad] = useState(1);
 
   useEffect(() => {
-    // Efecto para escuchar cambios en el carrito (útil para depuración)
-    console.log(cartItems);
+     console.log(cartItems);
   }, [cartItems]);
 
-  // Restar un producto de la cantidad seleccionada
-  const restarProducto = () => {
+   const restarProducto = () => {
     cantidad > 1 && setCantidad(cantidad - 1);
   };
 
-  // Sumar un producto a la cantidad seleccionada
-  const sumarProducto = () => {
+   const sumarProducto = () => {
     setCantidad(cantidad + 1);
   };
 
@@ -39,13 +35,12 @@ const ItemCount = ({ product }) => {
         return item;
       });
     } else {
-      // Si no existe, crear un nuevo elemento y agregarlo al carrito
-      const newItem = {
+       const newItem = {
         id: product.id,
         name: product.title,
         quantity: cantidad,
         price: product.price,
-        image: product.image, // Incluir la imagen en el nuevo elemento
+        image: product.image,  
       };
       updatedCartItems = [...cartItems, newItem];
     }
@@ -57,8 +52,7 @@ const ItemCount = ({ product }) => {
     setCartItemCount(updatedCartItems.reduce((total, item) => total + item.quantity, 0));
   }
 
-  // Renderizar el componente
-  return (
+   return (
     <div className="itemCount">
       <div className="contenedorContador my-3">
         <button className="btn btn-outline-dark" onClick={restarProducto}>

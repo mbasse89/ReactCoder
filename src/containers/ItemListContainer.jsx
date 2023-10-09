@@ -6,8 +6,8 @@ import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../firebase/client';
 
 const ItemListContainer = ({ greeting }) => {
-  const [productos, setProducts] = useState([]); // Estado para almacenar los productos
-  const [loading, setLoading] = useState(true); // Estado para controlar la carga de datos
+  const [productos, setProducts] = useState([]);  
+  const [loading, setLoading] = useState(true);  
   const { id: categoryName } = useParams(); // Captura la categoría desde la URL
 
   useEffect(() => {
@@ -19,8 +19,8 @@ const ItemListContainer = ({ greeting }) => {
 
   // Función para obtener los productos desde Firebase
   const getProducts = async () => {
-    const ref = collection(db, 'products'); // Referencia a la colección 'products' en Firebase
-    const data = await getDocs(ref); // Obtener documentos de la colección
+    const ref = collection(db, 'products');  
+    const data = await getDocs(ref); //  
     const dataFiltrada = data.docs.map((doc) => ({ ...doc.data(), id: doc.id })); // Mapear datos y agregar IDs
     console.log(dataFiltrada);
 
@@ -33,13 +33,13 @@ const ItemListContainer = ({ greeting }) => {
   };
 
   useEffect(() => {
-    getProducts(); // Llamar a la función para obtener productos cuando cambie la categoría
+    getProducts();  
   }, [categoryName]);
 
   return (
     <div className="my-5 productoContenedor">
       <div className="product-list-container">
-        {loading ? ( // Si está cargando, muestra el spinner
+        {loading ? ( 
           <Spinner />
         ) : (
           // Si no está cargando, muestra los productos

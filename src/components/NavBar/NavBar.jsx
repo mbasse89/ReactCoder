@@ -7,20 +7,17 @@ import { Spinner } from '../Spinner/Spinner';
 import { useCartContext } from '../CartContext/CartContext';
 
 const NavBar = () => {
-  // Estado de carga inicializado como verdadero
-  const [loading, setLoading] = useState(true);
+   const [loading, setLoading] = useState(true);
   
   // Usa el contexto para obtener el estado del carrito y la función para actualizar el contador
   const { cartItemCount, setCartItemCount } = useCartContext();
 
   useEffect(() => {
-    // Simula un retraso antes de detener la carga
-    setTimeout(() => {
+     setTimeout(() => {
       setLoading(false);
     }, 1500);
 
-    // Simula un cambio en la cantidad de elementos en el carrito al actualizar setCartItemCount
-  }, [setCartItemCount]);
+   }, [setCartItemCount]);
 
   return (
     <nav className="navbar navbar-expand-lg bg-body-tertiary fixed-top">

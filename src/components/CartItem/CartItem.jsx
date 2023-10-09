@@ -8,11 +8,9 @@ const CartItem = ({ product }) => {
 
   // Función para eliminar un producto del carrito
   const removeFromCart = () => {
-    // Filtra los elementos del carrito, excluyendo el producto actual
-    const updatedCart = cartItems.filter((item) => item.id !== product.id);
+     const updatedCart = cartItems.filter((item) => item.id !== product.id);
 
-    // Calcula el nuevo total del carrito sumando los precios de los productos restantes
-    const newTotal = updatedCart.reduce(
+     const newTotal = updatedCart.reduce(
       (total, item) => total + item.price * item.quantity,
       0
     );
